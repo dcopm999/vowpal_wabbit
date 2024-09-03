@@ -81,7 +81,7 @@ jobs:
           $version = Get-Content version.txt -Raw
           $version = $version.Trim()
           echo "::set-output name=VWVersion::$version"
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: VowpalWabbitNative-${{matrix.toolset}}-x64.${{ steps.fetch-vw-version.outputs.VWVersion }}.nupkg
           path: downloaded_nugets
