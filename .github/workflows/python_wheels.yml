@@ -54,7 +54,7 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: manylinux_amd64_${{ matrix.version }}
           path: built_wheel
@@ -107,7 +107,7 @@ jobs:
         with:
           python-version: '3.8'
           architecture: 'x64'
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: python_source_distribution
       - name: Install dependencies
@@ -180,7 +180,7 @@ jobs:
     - name: Set up QEMU
       id: qemu
       uses: docker/setup-qemu-action@v1
-    - uses: actions/download-artifact@v1
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: manylinux_aarch64_${{ matrix.config.version }}
         path: built_wheel
@@ -245,7 +245,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.version }}
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: macos_amd64_${{ matrix.version }}
           path: built_wheel
@@ -328,7 +328,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.version }}
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: windows_amd64_${{ matrix.version }}
           path: built_wheel
